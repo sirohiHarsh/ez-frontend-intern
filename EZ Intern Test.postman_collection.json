@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "8716c621-748a-4813-9810-4ba0c8d19f1e",
+		"name": "EZ Intern Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49910621",
+		"_collection_link": "https://cu23250403-6038756.postman.co/workspace/Harsh's-Workspace~2576161e-b433-431b-89da-b90e46e739b9/collection/49910621-8716c621-748a-4813-9810-4ba0c8d19f1e?action=share&source=collection_link&creator=49910621"
+	},
+	"item": [
+		{
+			"name": "Submit Contact Form",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Test user\",\n  \"email\": \"testuser@gmail.com\",\n  \"phone\": \"908765498\",\n  \"message\": \"This is a message\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vernanbackend.ezlab.in/api/contact-us/",
+					"protocol": "https",
+					"host": [
+						"vernanbackend",
+						"ezlab",
+						"in"
+					],
+					"path": [
+						"api",
+						"contact-us",
+						""
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		}
+	]
+}
